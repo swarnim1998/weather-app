@@ -48,6 +48,17 @@ class App extends React.Component {
       <div className="App">
         <h1>Weather App</h1>
         <Search getWeather={this.getWeather} />
+        {this.state.check ? (
+          <Weather
+            temp={this.state.temp}
+            weather={this.state.weather}
+            City={this.state.city}
+          />
+        ) : (
+          <div className="intro">
+            Get the whether data of any city in the world{" "}
+          </div>
+        )}
       </div>
     );
   }
