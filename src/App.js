@@ -18,7 +18,7 @@ class App extends React.Component {
   callApi(city, country) {
     const API_KEY = "0c2311c83e5c6bb1cc4ae0483498117c";
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`
     )
       .then((res) => res.json())
       .then((res) => {

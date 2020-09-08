@@ -1,11 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   WiRainMix,
   WiDaySunny,
   WiThunderstorm,
   WiSnow,
-  WiDayHaze,
-  WiDayFog,
   WiCloudy,
   WiHail,
   WiFog,
