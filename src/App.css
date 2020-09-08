@@ -1,6 +1,3 @@
-.App {
-}
-
 h1 {
   color: white;
 }
@@ -51,6 +48,7 @@ input[type="text"] {
 }
 
 input:-webkit-autofill {
+  box-shadow: blanchedalmond;
   -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
   -webkit-text-fill-color: #fff !important;
 }

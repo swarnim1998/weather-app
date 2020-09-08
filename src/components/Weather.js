@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { weatherConditions } from "./WheatherConditions";
+import React from "react";
+import { weatherConditions } from "./WeatherConditions";
 
 function Weather(props) {
   const dateBuilder = (d) => {
