@@ -45,7 +45,7 @@ function Weather(props) {
         <div className="temp">{Math.round(props.temp)}°c</div>
       </div>
       <div className="location-box">
-        <div className="location">{props.City}</div>
+        <div className="location">{props.city}</div>
         <div className="date">{dateBuilder(new Date())}</div>
       </div>
     </div>

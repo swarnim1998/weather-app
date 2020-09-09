@@ -1,13 +1,14 @@
 import React from "react";
-import Search from "./components/SearchBar";
-import Weather from "./components/Weather";
+import Home from "./components/Home";
+import Header from "./components/Header";
+import About from "./components/About";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      temp: "",
       weather: "",
       city: "",
       check: false,
@@ -16,6 +17,7 @@ class App extends React.Component {
   }
 
   callApi(city, country) {
+    console.log(city);
     const API_KEY = "0c2311c83e5c6bb1cc4ae0483498117c";
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`
@@ -44,22 +46,27 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.city);
     return (
-      <div className="App">
-        <h1>Weather App</h1>
-        <Search getWeather={this.getWeather} />
-        {this.state.check ? (
-          <Weather
-            temp={this.state.temp}
-            weather={this.state.weather}
-            City={this.state.city}
-          />
-        ) : (
-          <div className="intro">
-            Get the whether data of any city in the world{" "}
-          </div>
-        )}
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Home
+                getWeather={this.getWeather}
+                check={this.state.check}
+                temp={this.state.temp}
+                weather={this.state.weather}
+                City={this.state.city}
+              />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
